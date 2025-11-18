@@ -1,0 +1,13 @@
+version: '3.8'
+
+name: customer-feedback-service
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: feedback-service
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=feedback_db
+    restart: unless-stopped
